@@ -56,9 +56,7 @@ const routes = [
     },
 ];
 
-export const Sidebar = ({
-                            apiLimitCount = 0,
-                        }: {
+export const Sidebar = ({apiLimitCount = 0}: {
     apiLimitCount: number;
 }) => {
     const pathname = usePathname();
