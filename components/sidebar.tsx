@@ -7,7 +7,7 @@ import {Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoI
 import {usePathname} from 'next/navigation'
 
 import {cn} from '@/lib/utils'
-import { FreeCounter } from '@/components/free-counter'
+import {FreeCounter} from '@/components/free-counter'
 
 const poppins = Montserrat({weight: '600', subsets: ['latin']})
 
@@ -56,8 +56,12 @@ const routes = [
     },
 ];
 
-export const Sidebar = ({apiLimitCount = 0}: {
+export const Sidebar = ({
+                            apiLimitCount = 0,
+                            isPro = false
+                        }: {
     apiLimitCount: number;
+    isPro: boolean;
 }) => {
     const pathname = usePathname();
 
@@ -92,6 +96,7 @@ export const Sidebar = ({apiLimitCount = 0}: {
             </div>
             <FreeCounter
                 apiLimitCount={apiLimitCount}
+                isPro={isPro}
             />
         </div>
     );

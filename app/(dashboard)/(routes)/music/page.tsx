@@ -14,7 +14,7 @@ import {Input} from '@/components/ui/input'
 import {Form, FormControl, FormField, FormItem} from '@/components/ui/form'
 import {Loader} from '@/components/loader'
 import {Empty} from '@/components/ui/empty'
-import { useProModal } from '@/hooks/use-pro-modal'
+import {useProModal} from '@/hooks/use-pro-modal'
 
 import {formSchema} from './constants'
 
