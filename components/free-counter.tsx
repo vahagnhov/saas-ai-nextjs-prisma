@@ -7,7 +7,11 @@ import {Button} from '@/components/ui/button'
 import {Progress} from '@/components/ui/progress'
 import { useProModal } from '@/hooks/use-pro-modal'
 
-export const FreeCounter = ({ apiLimitCount = 0 }: {
+export const FreeCounter = ({
+                                isPro = false,
+                                apiLimitCount = 0
+}: {
+    isPro: boolean,
     apiLimitCount: number
 }) => {
     const [mounted, setMounted] = useState(false);
@@ -18,6 +22,10 @@ export const FreeCounter = ({ apiLimitCount = 0 }: {
     }, []);
 
     if (!mounted) {
+        return null;
+    }
+
+    if (isPro) {
         return null;
     }
 
