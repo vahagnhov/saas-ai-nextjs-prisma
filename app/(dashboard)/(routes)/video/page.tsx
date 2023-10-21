@@ -7,6 +7,7 @@ import {zodResolver} from '@hookform/resolvers/zod'
 import {useForm} from 'react-hook-form'
 import {FileAudio} from 'lucide-react'
 import {useRouter} from 'next/navigation'
+import {toast} from 'react-hot-toast'
 
 import {Heading} from '@/components/heading'
 import {Button} from '@/components/ui/button'
@@ -43,6 +44,8 @@ const VideoPage = () => {
         } catch (error: any) {
             if (error?.response?.status === 403) {
                 proModal.onOpen();
+            } else {
+                toast.error('Something went wrong.');
             }
         } finally {
             router.refresh();

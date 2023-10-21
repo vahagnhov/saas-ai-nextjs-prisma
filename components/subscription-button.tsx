@@ -1,10 +1,11 @@
-"use client";
+'use client'
 
-import axios from "axios";
-import {useState} from "react";
-import {Zap} from "lucide-react";
+import axios from 'axios'
+import {useState} from 'react'
+import {Zap} from 'lucide-react'
 
-import {Button} from "@/components/ui/button";
+import {Button} from '@/components/ui/button'
+import {toast} from 'react-hot-toast'
 
 export const SubscriptionButton = ({isPro = false}: {
     isPro: boolean;
@@ -19,7 +20,7 @@ export const SubscriptionButton = ({isPro = false}: {
 
             window.location.href = response.data.url;
         } catch (error) {
-            console.log('Billing error', error);
+            toast.error('Something went wrong.');
         } finally {
             setLoading(false);
         }

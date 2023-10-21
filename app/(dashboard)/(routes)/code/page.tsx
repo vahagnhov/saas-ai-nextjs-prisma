@@ -7,6 +7,7 @@ import {useForm} from 'react-hook-form'
 import {useState} from 'react'
 import ReactMarkdown from 'react-markdown'
 import {useRouter} from 'next/navigation'
+import {toast} from 'react-hot-toast'
 import OpenAI from 'openai'
 
 import {BotAvatar} from '@/components/bot-avatar'
@@ -49,6 +50,8 @@ const CodePage = () => {
         } catch (error: any) {
             if (error?.response?.status === 403) {
                 proModal.onOpen();
+            } else {
+                toast.error('Something went wrong.');
             }
         } finally {
             router.refresh();
