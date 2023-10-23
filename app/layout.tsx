@@ -7,7 +7,7 @@ import {ModalProvider} from '@/components/modal-provider'
 import {ToasterProvider} from '@/components/toaster-provider'
 import {CrispProvider} from '@/components/crisp-provider'
 
-const crispWebsiteID = process.env.CRISP_WEBSITE_ID || ''
+const crispWebsiteID = process.env.CRISP_WEBSITE_ID
 
 const font = Inter({subsets: ['latin']})
 
