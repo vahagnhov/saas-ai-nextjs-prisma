@@ -7,6 +7,8 @@ import {ModalProvider} from '@/components/modal-provider'
 import {ToasterProvider} from '@/components/toaster-provider'
 import {CrispProvider} from '@/components/crisp-provider'
 
+const crispWebsiteID = process.env.CRISP_WEBSITE_ID || ''
+
 const font = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
@@ -22,7 +24,7 @@ export default function RootLayout({
   return (
       <ClerkProvider>
           <html lang="en">
-          <CrispProvider/>
+          <CrispProvider crispWebsiteID={crispWebsiteID}/>
           <body className={font.className}>
           <ToasterProvider/>
           <ModalProvider/>

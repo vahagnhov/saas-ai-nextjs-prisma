@@ -3,9 +3,9 @@
 import { useEffect } from 'react'
 import { Crisp } from 'crisp-sdk-web'
 
-export const CrispChat = () => {
+export const CrispChat = ({crispWebsiteID}) => {
     useEffect(() => {
-        Crisp.configure(process.env.CRISP_WEBSITE_ID  || 'default-website-id');
+        Crisp.configure(crispWebsiteID  || 'default-website-id');
     }, []);
 
     return null;
